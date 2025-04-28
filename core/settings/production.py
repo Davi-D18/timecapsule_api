@@ -48,4 +48,5 @@ ALLOWED_HOSTS = ['seu-dominio.com']
 
 CORS_ALLOWED_ORIGINS = [
     'https://timecapsule-front.vercel.app',
+    'timecapsule-api.onrender.com'
 ]
