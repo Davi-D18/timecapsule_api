@@ -48,5 +48,5 @@ ALLOWED_HOSTS = ['seu-dominio.com']
 
 ALLOWED_ORIGINS = [
     'https://timecapsule-front.vercel.app',
-    'timecapsule-api.onrender.com'
+    'https://timecapsule-api.onrender.com'
 ]

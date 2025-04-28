@@ -3,7 +3,6 @@ Base settings for time_capsule_api project.
 """
 import os
 from pathlib import Path
-import sys
 from dotenv import load_dotenv
 
 from datetime import timedelta
