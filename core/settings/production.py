@@ -46,7 +46,7 @@ LOGGING = {
 
 ALLOWED_HOSTS = ['seu-dominio.com']
 
-CORS_ALLOWED_ORIGINS = [
+ALLOWED_ORIGINS = [
     'https://timecapsule-front.vercel.app',
     'timecapsule-api.onrender.com'
 ]
