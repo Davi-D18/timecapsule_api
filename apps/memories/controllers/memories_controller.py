@@ -59,3 +59,10 @@ class MemoryDetailView(generics.RetrieveDestroyAPIView):
 
         serializer = self.get_serializer(instance)
         return Response(serializer.data)
+
+
+class MemoriesPublics(generics.ListAPIView):
+    serializer_class = MemorySerializer
+
+    def get_queryset(self):
+        return Memories.objects.filter(is_public=True)

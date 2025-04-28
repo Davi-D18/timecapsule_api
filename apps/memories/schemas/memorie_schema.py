@@ -7,7 +7,7 @@ class MemorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Memories
-        fields = ['id', 'title', 'unlock_date', 'content', 'owner', 'created_at']
+        fields = ['id', 'title', 'unlock_date', 'content', 'owner', 'created_at', 'is_public']
         extra_kwargs = {
             'content': {'write_only': True},
             'owner': {'read_only': True},

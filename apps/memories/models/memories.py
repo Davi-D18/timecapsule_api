@@ -9,6 +9,7 @@ class Memories(models.Model):
     content = models.TextField(verbose_name="Conteúdo")
     unlock_date = models.DateField(verbose_name="Data de desbloqueio", null=False)
     created_at  = models.DateTimeField(auto_now_add=True)
+    is_public = models.BooleanField(default=False)
     
     class Meta:
         ordering = ['id']
