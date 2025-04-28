@@ -38,6 +38,7 @@ ENV/
 *.swo
 
 docs
+.env
 
 # Environment variables
 # .env
