@@ -44,7 +44,7 @@ LOGGING = {
     },
 }
 
-ALLOWED_HOSTS = ['https://timecapsule-api.onrender.com']
+ALLOWED_HOSTS = ['timecapsule-api.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
     'https://timecapsule-front.vercel.app',
