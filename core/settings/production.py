@@ -1,6 +1,7 @@
 from .base import *  # noqa: F403
 import os
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -37,15 +38,14 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['console'],  # Altere para 'console'
+            'handlers': ['console'],
             'level': 'ERROR',
             'propagate': True,
         },
     },
 }
 
-ALLOWED_HOSTS = ['timecapsule-api.onrender.com']
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '*').split(',')
 
-CORS_ALLOWED_ORIGINS = [
-    'https://timecapsule-front.vercel.app',
-]
+CORS_ALLOW_ALL_ORIGINS = False  # Desativa o acesso total
+CORS_ALLOWED_ORIGINS = os.getenv('DJANGO_CORS_ALLOWED_ORIGINS', '*').split(',')

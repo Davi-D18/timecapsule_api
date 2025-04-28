@@ -21,7 +21,6 @@ class MemoryListCreateView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         # Get username from request data
         username = self.request.data.get('owner')
-        print(self.request.data)
         
         # Check if user exists in database
         try:

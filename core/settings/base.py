@@ -19,8 +19,6 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-change-this-in-prod
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '*').split(',')
-
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -33,23 +31,21 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'apps.memories',
     'apps.accounts',
-    'corsheaders',
     'drf_yasg',
+    'corsheaders',
     'core'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-CORS_ALLOW_ALL_ORIGINS = False
 
 ROOT_URLCONF = 'core.urls'
 
@@ -76,10 +72,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
     }
 }
 
@@ -102,7 +94,6 @@ AUTHENTICATION_BACKENDS = [
     'apps.accounts.backends.EmailBackend',
     'django.contrib.auth.backends.ModelBackend',   # fallback padrão
 ]
-
 
 STATIC_URL = 'static/'
 
